@@ -8,7 +8,19 @@ o trabalho pesado pra gente.
 Por isso nesse repositório, para fixar alguns tutoriais e vídeos
 sobre o assunto, eu crei esse sisteminha de login em Django
 
-
-
-
 Obs: Não sei porque mas alguns id's do CSS não estão funcionando em alguns elementos
+
+
+Para rodar o projeto use o comando:
+
+Para instalar o pipenv
+```pip install pipenv``
+
+Para baixar as dependências do projeto(Django):
+```pipenv sync```
+
+Ou
+```pipenv install django ```
+
+Então na raiz do projeto use o comando:
+```python manage.py runserver```
