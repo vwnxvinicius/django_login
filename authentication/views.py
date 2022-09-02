@@ -1,3 +1,4 @@
+from pickletools import read_unicodestring1
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
@@ -6,8 +7,6 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse, reverse_lazy
 
 # Create your views here.
-def home(request):
-    return render(request, 'authenticate/home.html')
 
 def login_user(request):
     if request.method == 'POST':
@@ -17,7 +16,7 @@ def login_user(request):
         user = authenticate(username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('/')
+            return redirect('authentication:success')
         else:
             message = messages.add_message(request, messages.INFO, 'Your credentials are incorrect')
             return render(request, 'authenticate/login.html', {'message': message})
@@ -38,9 +37,12 @@ def register_user(request):
             password = form.cleaned_data['password1']
             user = authenticate(username=username, password=password)
             login(request, user)
-            return redirect(reverse_lazy('authentication:login'))
+            return redirect(reverse_lazy('authentication:success'))
         else:
             return render(request, 'authenticate/register.html', {'form': form})
     else:
         form = UserCreationForm(request.POST)
         return render(request, 'authenticate/register.html', {'form': form})
+
+def success(request):
+    return render(request, 'authenticate/succesfull.html')
