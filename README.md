@@ -14,7 +14,7 @@ Obs: Não sei porque mas alguns id's do CSS não estão funcionando em alguns el
 Para rodar o projeto use o comando:
 
 Para instalar o pipenv
-```pip install pipenv``
+```pip install pipenv```
 
 Para baixar as dependências do projeto(Django):
 ```pipenv sync```
