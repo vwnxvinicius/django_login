@@ -16,12 +16,13 @@
         <input type="password" name="password" autocomplete="off" placeholder="Password">
         <input type="submit" value="Login" id="button">
         <p>Aren't a member?<a href="{% url 'authentication:register_user' %}">Register</a></p>
-        <p>Mensagem de login</p>
-    </form>
-    {% if messages %}
+        <p>
+        {% if messages %}
         {% for message in messages %}
         {{ message }}
         {% endfor %}
     {% endif %}
+        </p>
+    </form>
 </body>
 </html>
