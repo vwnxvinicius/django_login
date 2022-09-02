@@ -15,14 +15,12 @@
         <input type="text" name="username" autocomplete="off" placeholder="Username"><br>
         <input type="password" name="password" autocomplete="off" placeholder="Password">
         <input type="submit" value="Login" id="button">
-        <p>Aren't a member?<a href="{% url 'authentication:register_user' %}">Register</a></p>
-        <p>
+        <p>Aren't a member?  <a href="{% url 'authentication:register_user' %}">Register</a></p>
         {% if messages %}
         {% for message in messages %}
-        {{ message }}
+        <p id='alert'>{{ message }}</p>
         {% endfor %}
     {% endif %}
-        </p>
     </form>
 </body>
 </html>

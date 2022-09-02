@@ -54,7 +54,13 @@ form p {
     font-family: 'Courier New', Courier, monospace;
 }
 
+form #alert {
+    color: red;
+    background-color: rgb(221, 198, 198);
+}
+
 form a {
+    font-family: 'Courier New', Courier, monospace;
     text-decoration: none;
     color:  red
 }

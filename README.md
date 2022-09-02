@@ -7,3 +7,8 @@ o trabalho pesado pra gente.
 
 Por isso nesse repositório, para fixar alguns tutoriais e vídeos
 sobre o assunto, eu crei esse sisteminha de login em Django
+
+
+
+
+Obs: Não sei porque mas alguns id's do CSS não estão funcionando em alguns elementos

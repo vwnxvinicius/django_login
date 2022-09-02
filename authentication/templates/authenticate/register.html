@@ -1,17 +1,25 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
     <title>Document</title>
 </head>
 <body>
     <h1>Register</h1>
     <form action="{% url 'authentication:register_user' %}" method="post">
-        {{ form }}
+        <h1>Register</h1>
+        {% for field in form %}
+            <div class='field'>
+                <label for="{{ field.id_for_label }}" class="label">{{ field.html_name }}</label>
+                {{ field }}
+            </div>
+        {% endfor %}
         {% csrf_token %}
-        <input type="submit" value="Register">
+        <input type="submit" value="Register" id="button">
     </form>
 </body>
 </html>
